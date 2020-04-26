@@ -13,5 +13,8 @@ function solution(strings, n){
     console.log( strings)
 
 }
-var strings = ['aaa', 'bbb', 'aac'];
+var strings = ['a', 'b','z', 'c'];
 solution(strings,0)
+strings.sort(function(a,b){
+    return a-b;
+})
