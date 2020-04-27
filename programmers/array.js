@@ -40,3 +40,16 @@ server3.forEach(
 )
 str3+= '"이(가) 들어있네요 ~';
 console.log(str3);
+var arr21 = [1,2,3,23,4,5];
+arr21.sort((a,b)=>a-b)
+console.log(arr21+' ----')
+arr21= arr21.map(i=>{return i -1}).reverse()
+console.log(arr21)
+console.log('----');
+
+
+
+[1,2,3,4,5].some(function(v) {
+   console.log(v);
+   return (v ==2);
+});
