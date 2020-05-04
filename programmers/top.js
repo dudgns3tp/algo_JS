@@ -25,7 +25,5 @@ function solution(heights) {
     }
     return result.reverse();
 }
-
 var heights = [1, 5, 3, 6, 7, 6, 5]
-
 console.log(solution(heights));

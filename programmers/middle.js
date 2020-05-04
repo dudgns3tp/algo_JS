@@ -6,9 +6,4 @@ function solution(str) {
     return answer;
 }
 console.log(solution('abcdef'));
-var str = "abcdef";
-let strLen = parseInt(str.length/2);
-console.log(strLen);
-var str2 = str.slice(strLen-1,strLen+1);
-console.log("str2:"+str2)
 
