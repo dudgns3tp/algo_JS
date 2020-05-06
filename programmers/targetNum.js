@@ -1,15 +1,25 @@
 function solution(numbers, target) {
     var answer = 0;
-    var minus = -1;
-    var len = numbers.length;
-    var bucket;
-    for(let i=0; i<len; i++){
-        for(let j=)
-    }
+    let sum = 0;
 
+    const dfs = (numbers, target , node) =>{
+        if(node === numbers.length) {
+            sum = 0;
+            for(let num of numbers){
+                sum+= num;
+            }
+            if(sum === target){
+                return answer ++;
+            }
+        }else{
+            numbers[node] *=1
+            dfs(numbers, target, node+1)
+
+            numbers[node] *=-1
+            dfs(numbers, target,node +1)
+        }
+    }
+    dfs(numbers, target, 0);
     return answer;
 }
-var arr = [1,1,1,1,1];
-//solution(arr, 3);
-var cnt = arr.length;
-console.log(cnt);
+console.log(solution([1,1,1,1,1],3))
