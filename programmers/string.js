@@ -7,4 +7,4 @@ function solution(s){
         return false;
     }
 }
-console.log(solution(ss))
+console.log(solution(s))
