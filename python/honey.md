@@ -1,4 +1,4 @@
-## 함수 꿀팁(은 아니고 내가 처음본 특성)
+## 파이썬 정리
 
 
 ``` py
@@ -65,3 +65,11 @@ print(solution(participant, completion))
 ```
 
 카운터는 ** 딕셔너리를 받는 함수인데 딕셔너리 키 별로 몇개의 키를 가지고있는지 알려줌.
+
+
+### Unpacking *
+```py
+a = 7
+b = 5
+print( *divmod(a, b)) # 1 2
+```
