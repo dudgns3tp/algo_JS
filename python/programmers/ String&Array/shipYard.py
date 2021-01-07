@@ -1,21 +1,21 @@
-from queue import PriorityQueue
+import heapq
 
-
-"""
 def solution(no, works):
-    while no > 0: 
-      works.sort()
-      no -= 1
-      if works[-1] == 0:
-        break
-      works[-1] -= 1
-      
+  # 힙 생성
+  heap = []
 
-    works = sorted(works)
-    print(works)
-    for n, i in enumerate(works):
-      works[n] = i*i
-    return sum(works)
+  # 최대힙 생성
+  for num in works:
+    heapq.heappush(heap, (-num, num))
+  
+  # 솔루션
+  while no > 0:
+    if not heap[0][1]:
+      break
+    work = heapq.heappop(heap)[1] - 1
+    heapq.heappush(heap, (-work, work))
+    no -= 1
 
-print(solution(2, [3,3,3]))
-"""
+  return sum(list(map(lambda x: x[1]**2, heap)))
+
+print(solution(4, [1,1,1]))

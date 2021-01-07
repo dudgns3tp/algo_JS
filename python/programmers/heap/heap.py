@@ -14,9 +14,9 @@ def solution(n, exec_times):
   print(queue)
   """
   while queue:
-    target_serer = heapq.heappop(servers)
-    target_serer[FINISHED_AT] += queue.popleft()
-    target_serer[JOBS_DONE] += 1
+    target_server = heapq.heappop(servers)
+    target_server[FINISHED_AT] += queue.popleft()
+    target_sevrer[JOBS_DONE] += 1
     print(servers)
 """
 print(solution(3, exec_times))

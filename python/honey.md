@@ -1,4 +1,66 @@
-## 파이썬 정리
+## 자료구조 정리
+
+### queue
+
+큐는 FIFO(First In First Out)을 보장하는 자료구조! 
+
+#### deque 객체
+deque는 스택과 큐를 합친 자료구조입니다. 가장자리에 원소를 넣거나 뺄 수 있습니다.덱에서는 다음 메소드를 제공합니다.
+| 메소드 | 설명 |
+| :---: |:---:|
+|  deque([iterable[, maxlen]]) | 덱의 초기화 함수. iterable(리스트 등)을 인자로 건네면 이를 deque화 해줌 |
+| append(x) | x를 덱의 오른쪽에 삽입합니다. |
+| popleft() | 덱의 가장 왼쪽에 있는 원소를 덱에서 제거하며, 그 값을 리턴
+| clear() | 모든 원소를 지움|
+
+> 큐를 list로 이용하지 않는 이유는 스택에서 list.append와 list.pop()을 이용했던 것 처럼 list.append와 list.pop(0)을 이용하면 리스트를 큐 처럼 사용할 수 있습니다. 허나 pop() 의 시간 복잡도는 O(1)인 반면 pop(0)의 시간 복잡도는 O(N)이기 때문에 시간이 오래걸림. 따라서 **시간복잡도를 고려해 리스트는 큐로 사용하지 않음**
+
+#### deque - init
+
+deque([iterable[, maxlen]])를 이용해 초기화 합니다
+```py
+from collections import deque
+
+# 빈 큐 만들기
+deque1 = deque()
+
+# 원소가 있는 큐 만들기
+deque2 = deque([1, 2, 3])
+
+# 큐 최대 길이 명시하기(원소 수가 maxlen에 도달했을때 새로운 값을 넣으면, 앞서 넣은 값은 사라지고  pop이 일어남, 뒤에 새 값이 들어감)
+deque3 = deque(maxlen=5)
+```
+
+#### deque - append(x)
+큐에 원소를 넣을때 사용합니다
+```py
+my_deque = deque()
+my_deque.append(3)
+
+print(my_deque)
+
+deque([3])
+```
+
+#### deque - popleft()
+큐에 원소를 제거할때 사용합니다.
+```py
+my_deque = deque([1,2,3])
+
+while my_deque:
+  print("{}을/를 pop했습니다".format(my_deque.popleft()))
+
+"""
+1을/를 pop했습니다
+2을/를 pop했습니다
+3을/를 pop했습니다
+"""
+```
+
+
+
+#### heapq와 PriorityQueue
+- heapq(힙)은 데이터가 **지속적으로 정렬돼야** 하며  데이터의 **삽입/삭제가** 빈번하게 일어날때 사용
 
 
 ``` py
@@ -74,8 +136,3 @@ b = 5
 print( *divmod(a, b)) # 1 2
 ```
 
-
-### 자료구조 정리
-
-#### heapq와 PriorityQueue
-- heapq(힙)은 데이터가 **지속적으로 정렬돼야** 하며  데이터의 **삽입/삭제가** 빈번하게 일어날때 사용
