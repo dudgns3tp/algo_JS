@@ -53,3 +53,13 @@ console.log('----');
    console.log(v);
    return (v ==2);
 });
+
+const keyword = '';
+const keyword2 = 'ke';
+
+console.log(keyword == true)
+console.log(keyword2 == true)
+let score = 0
+score += keyword !== '' ? 0 : 1
+
+console.log(score)
