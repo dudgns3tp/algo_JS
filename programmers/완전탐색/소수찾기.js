@@ -19,9 +19,9 @@ function permutation(arr, selectNumber) {
 
     arr.forEach((fixed, index, origin) => {
         const restArr = origin.filter((_, idx) => idx !== index);
-        const permutationArr = permutation(restArr, selectNumber - 1); // 나머지에 대해서 조합을 구한다.
+        const permutationArr = permutation(restArr, selectNumber - 1);
         const combineFixer = permutationArr.map((value) => [fixed, ...value]);
-        result.push(...combineFixer); // 배열 spread syntax로 모두다 push
+        result.push(...combineFixer);
     });
     return result;
 }
